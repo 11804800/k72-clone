@@ -10,3 +10,23 @@
     font-family: font2;
     src: url("../public/fonts/Lausanne-500.woff2");
 }
+body{
+    overflow: hidden;
+}
+
+.moveX
+{
+    animation-name: moveAnimation;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes moveAnimation {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
