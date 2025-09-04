@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import Header from "./Components/Common/Header.jsx";
 import Context from "./Components/Context/Context.jsx";
+import AgenceScroll from "./Components/Agence/AgenceScroll.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -15,9 +16,9 @@ createRoot(document.getElementById("root")).render(
           v7_startTransition: true,
         }}
       >
-        <Header>
+        {/* <Header> */}
           <App />
-        </Header>
+        {/* </Header> */}
       </BrowserRouter>
     </Context>
   </StrictMode>

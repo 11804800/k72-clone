@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+*{
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
 
 @font-face {
     font-family:font1;
@@ -10,6 +17,7 @@
     font-family: font2;
     src: url("../public/fonts/Lausanne-500.woff2");
 }
+
 
 
 .moveX
@@ -26,5 +34,41 @@
     }
     to{
         transform: translateX(-100%);
+    }
+}
+.carosel-scroll,
+.carosel-scroll1
+{
+    scroll-behavior: smooth
+}
+
+.moveRight{
+    animation-name: moveRightAnimation;
+    animation-timing-function: linear;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+.moveLeft{
+    animation-name: moveLeftAnimation;
+    animation-timing-function: linear;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes moveRightAnimation {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes moveLeftAnimation {
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
     }
 }

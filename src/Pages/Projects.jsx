@@ -101,9 +101,9 @@ function Projects() {
   return (
    <div className='p-4'>
     <div className='mt-[20vw]'>
-      <h1 className='font-[font2] text-[9.5vw] flex items-start leading-[0.8]'>Projets<small className='text-3xl'>16</small></h1>
+      <h1 className='font-[font2] text-[13vw] flex items-start leading-[0.8] uppercase'>Projets<small className='text-3xl'>16</small></h1>
     </div>
-    <div className='project_scroller mt-8 flex flex-col gap-2 w-full h-full'>
+    <div className='project_scroller  flex flex-col gap-2 w-full h-full'>
       {
         ImageData.map((item)=>{
           return (
