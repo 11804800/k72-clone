@@ -18,7 +18,7 @@ function AgenceScroll() {
       scrollTrigger: {
         trigger: ".Agence-scroll2",
         start: "top top",
-        end: "bottom top",
+        end: "bottom -50%",
         scrub: true,
         pin: true,
       },
@@ -27,9 +27,10 @@ function AgenceScroll() {
       scrollTrigger: {
         trigger: ".Agence-scroll3",
         start: "top top",
-        end: "bottom top",
+        end: "bottom -50%",
         scrub: true,
         pin: true,
+        markers:true
       },
     });
   });

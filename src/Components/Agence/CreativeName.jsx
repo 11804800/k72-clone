@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 function CreativeName() {
   
   const [hovering, setHovering] = useState(false);
-  const [ImageIndex, setImage] = useState(0);
+  const [ImageIndex, setImage] = useState("../SophieA.jpg");
 
   const ImageDivRef = useRef();
   const ImageRef = useRef();
