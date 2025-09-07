@@ -6,6 +6,7 @@ import FooterComponent from "../Components/Navigation/FooterComponent";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/src/ScrollTrigger";
+import Navbar from "../Components/Navigation/Navbar";
 gsap.registerPlugin(ScrollTrigger);
 
 const ImageArray = [
@@ -27,11 +28,13 @@ const ImageArray = [
 function Agence() {
   const [Index, setIndex] = useState(0);
   useGSAP(() => {
+
+
     gsap.to(".agence-image-div", {
       scrollTrigger: {
         pin: true,
         trigger: ".agence-image-div",
-        start: "top 20%",
+        start: "top 30%",
         end: "top -130%",
         onUpdate: (elem) => {
           let index;
@@ -47,9 +50,9 @@ function Agence() {
   });
 
   return (
-    <>
-      <div className="py-1">
-        <div className="flex flex-col mt-[28vw] relative">
+    <div className="agence-container transition-all duration-75">
+      <div className="py-1 ">
+        <div className="flex app-div flex-col mt-[12vw] relative">
           <div className="agence-image-div overflow-hidden w-[230px] left-[28%] -z-10 h-[300px] bg-red-500 rounded-4xl">
             <img src={ImageArray[Index]} className="w-fullh-full " />
           </div>
@@ -110,7 +113,7 @@ function Agence() {
       </div>
       <AgenceScroll />
       <FooterComponent />
-    </>
+    </div>
   );
 }
 

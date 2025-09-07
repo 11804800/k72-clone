@@ -8,9 +8,18 @@ function AgenceCarousel() {
     gsap.to("body", {
       background:"black",
       color:"white",
+      scrollTrigger: {
+        trigger: ".carousel-container",
+        start: "top 80%",
+        end: "top 60%",
+        scrub: true,
+      },
+    });
+    gsap.to("#logo-path", {
+      fill:"white",
       duration: 2,
       scrollTrigger: {
-        trigger: ".container",
+        trigger: ".carousel-container",
         start: "top 80%",
         end: "top 60%",
         scrub: true,
@@ -55,7 +64,7 @@ function AgenceCarousel() {
     });
   });
   return (
-    <div className="overflow-hidden container w-full">
+    <div className="overflow-hidden carousel-container w-full">
       <div className="flex flex-col gap-2 font-[font2] uppercase">
         <div className="relative flex justify-center items-center Carousel-image-div1">
           <div className="absolute top-[25%] w-full h-full carousel-scroll">

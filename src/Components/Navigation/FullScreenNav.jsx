@@ -1,55 +1,109 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useContext, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AppContext } from "../Context/Context";
 
 function FullScreenNav() {
   const FullNavRef = useRef();
+  const navigate = useNavigate();
   const { NavActive, setNavActive } = useContext(AppContext);
 
-  useGSAP(() => {
+  function gsapAnimation() {
     const tl = gsap.timeline();
 
-    tl.from(".stair", {
-      height: 0,
+    tl.to("#fullscreennav", {
+      display: "block",
+    });
+
+    tl.to(".stairing", {
+      height: "100%",
+      delay:0.2,
       stagger: {
         amount: -0.3,
       },
     });
 
-    tl.from(FullNavRef.current, {
-      opacity: 0,
+    tl.to(FullNavRef.current, {
+      opacity: 1,
+      height: "100%",
     });
 
-    tl.from("#close-btn", {
-      translateX: "40%",
-      opacity: 0,
+    tl.to(".link", {
+      rotateX: 0,
+      opacity: 1,
+      stagger: {
+        amount: 0.2,
+      },
     });
 
-    tl.from(".link", {
+    tl.to(".nav-link", {
+      opacity: 1,
+    });
+  }
+  function gsapAnimationReverse() {
+    const tl = gsap.timeline();
+    tl.to(".link", {
       rotateX: 90,
       opacity: 0,
       stagger: {
         amount: 0.3,
       },
     });
-  });
+
+    tl.to(FullNavRef.current, {
+      opacity: 0,
+      height: 0,
+    });
+
+    tl.to(".stairing", {
+      height: 0,
+      stagger: {
+        amount: 0.1,
+      },
+    });
+
+    tl.to(".nav-link", {
+      opacity: 0,
+    });
+
+    tl.to("#fullscreennav", {
+      display: "none",
+    });
+  }
+
+  useGSAP(() => {
+    if (NavActive) {
+      gsapAnimation();
+    } else {
+      gsapAnimationReverse();
+    }
+  }, [NavActive]);
 
   return (
-    <div id="fullscreennav" className="h-screen w-full absolute z-[9999]">
+    <div
+      id="fullscreennav"
+      className="h-screen transition-all duration-200 fixed w-full no-scrollbar z-[9999]"
+    >
       <div className="h-screen fixed w-full">
         <div className="flex w-full h-full">
-          <div className="w-1/5 stair h-full bg-black"></div>
-          <div className="w-1/5 stair h-full bg-black"></div>
-          <div className="w-1/5 stair h-full bg-black"></div>
-          <div className="w-1/5 stair h-full bg-black"></div>
-          <div className="w-1/5 stair h-full bg-black"></div>
+          <div className="w-1/5 stairing h-full bg-black"></div>
+          <div className="w-1/5 stairing h-full bg-black"></div>
+          <div className="w-1/5 stairing h-full bg-black"></div>
+          <div className="w-1/5 stairing h-full bg-black"></div>
+          <div className="w-1/5 stairing h-full bg-black"></div>
         </div>
       </div>
-      <div ref={FullNavRef} className="relative bg-black h-full">
-        <div className="flex w-full  justify-between items-start p-4">
-          <div>
+      <div
+        ref={FullNavRef}
+        className="relative bg-black h-full navigation-container"
+      >
+        <div className="flex w-full  justify-between items-start p-4 nav-link">
+          <div
+            onClick={() => {
+              navigate("/"), setNavActive(false);
+            }}
+          >
             <svg
               className="w-full"
               xmlns="http://www.w3.org/2000/svg"
@@ -73,82 +127,174 @@ function FullScreenNav() {
             <div className="h-44 w-[2px] bg-white right-0 absolute rotate-45 origin-top"></div>
           </div>
         </div>
-        <div id="all-links" className="text-white py-0">
-          <div className="link origin-top border-b border-t uppercase relative">
+        <div id="all-links" className="text-white py-0 flex flex-col  h-full">
+          <div className="group link origin-top border-b border-t uppercase relative">
             <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center">
               Projects
             </h1>
-            {/* <div className="absolute flex bg-[#d3fd50] top-0 w-full text-black font-[font2]">
+            <div
+              onClick={() => {
+                navigate("/project");
+                setNavActive(false);
+              }}
+              className="cursor-pointer group-hover:h-full h-0 transition-all duration-150 origin-center overflow-hidden absolute flex bg-[#d3fd50] top-0 w-full text-black font-[font2]"
+            >
               <div className="flex items-center gap-2 shrink-0 moveX">
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full" />
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full"  />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
               </div>
               <div className="flex items-center gap-2 shrink-0 moveX">
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full" />
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full"  />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
               </div>
-            </div> */}
+            </div>
           </div>
-          <div className="link origin-top border-b uppercase relative">
+          <div className="  group link origin-top border-b uppercase relative">
             <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center">
               Agence
             </h1>
-            {/* <div className="absolute flex bg-[#d3fd50] top-0 w-full text-black font-[font2]">
+            <div
+              onClick={() => {
+                navigate("/agence");
+                setNavActive(false);
+              }}
+              className="cursor-pointer group-hover:h-full h-0 transition-all duration-150 origin-center overflow-hidden absolute flex bg-[#d3fd50] top-0 w-full text-black font-[font2]"
+            >
               <div className="flex items-center gap-2 shrink-0 moveX">
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full" />
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full"  />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
               </div>
               <div className="flex items-center gap-2 shrink-0 moveX">
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full" />
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full"  />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
               </div>
-            </div> */}
+            </div>
           </div>
-          <div className="link origin-top border-b uppercase relative">
-            <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center ">
+          <div className="group link origin-top border-b uppercase relative">
+            <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center">
               Contact
             </h1>
-            {/* <div className="absolute flex bg-[#d3fd50] top-0 w-full text-black font-[font2]">
+            <div className="cursor-pointer group-hover:h-full h-0 transition-all duration-150 origin-center overflow-hidden absolute flex bg-[#d3fd50] top-0 w-full text-black font-[font2]">
               <div className="flex items-center gap-2 shrink-0 moveX">
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full" />
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full"  />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
               </div>
               <div className="flex items-center gap-2 shrink-0 moveX">
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full" />
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full"  />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
               </div>
-            </div> */}
+            </div>
           </div>
-          <div className="link origin-top border-b uppercase relative">
+          <div className="group link origin-top border-b uppercase relative">
             <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center ">
               Blogue
             </h1>
-            {/* <div className="absolute flex bg-[#d3fd50] top-0 w-full text-black font-[font2]">
+            <div className="cursor-pointer group-hover:h-full h-0 transition-all duration-150 origin-center overflow-hidden absolute flex bg-[#d3fd50] top-0 w-full text-black font-[font2]">
               <div className="flex items-center gap-2 shrink-0 moveX">
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full" />
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full"  />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
               </div>
               <div className="flex items-center gap-2 shrink-0 moveX">
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full" />
-                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">Pour Tout voir</p>
-                <img src="./nav-thumbnail.jpg" className="h-[6vw] rounded-full"  />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
+                <p className="text-[8vw] text-nowrap leading-[0.8] pt-3">
+                  Pour Tout voir
+                </p>
+                <img
+                  src="./nav-thumbnail.jpg"
+                  className="h-[6vw] rounded-full"
+                />
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import FooterComponent from "../Components/Navigation/FooterComponent";
+import Navbar from "../Components/Navigation/Navbar";
 
 const ImageData = [
   {
@@ -91,7 +92,7 @@ function Projects() {
         scrub: true,
       },
     });
-    tl.from(".Project_div1", { height: "100px", duration: 1 });
+    tl.from(".Project_div1", { height: "150px", duration: 1 });
     for (let i = 2; i <= 8; i++) {
       tl.from(`.Project_div${i}`, { height: "100px", duration: 1 }, "+=0.2");
     }
@@ -100,8 +101,9 @@ function Projects() {
   const [selected, SetSelected] = useState(null);
   return (
     <>
+      <Navbar />
       <div className="p-4">
-        <div className="mt-[20vw]">
+        <div className="app-div mt-[15vw] pt-[10vw]">
           <h1 className="font-[font2] text-[13vw] flex items-start leading-[0.8] uppercase">
             Projets<small className="text-3xl">16</small>
           </h1>
