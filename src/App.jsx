@@ -1,16 +1,15 @@
-import React, { useContext } from "react";
+import React, { lazy, Suspense} from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./Pages/Home";
-import Agence from "./Pages/Agence";
-import Projects from "./Pages/Projects";
+const Home=lazy(()=>import("./Pages/Home"));
+const Agence = lazy(() => import("./Pages/Agence"));
+const Projects=lazy(()=>import("./Pages/Projects"));
 import FullScreenNav from "./Components/Navigation/FullScreenNav";
-import { AppContext } from "./Components/Context/Context";
 import Header from "./Components/Common/Header";
+import LoadingComponent from "./Components/Common/Loading";
 
 function App() {
-  const { NavActive } = useContext(AppContext);
   return (
-    <>
+    <Suspense fallback={<LoadingComponent/>}>
       <Header>
         <FullScreenNav />
         <Routes>
@@ -19,7 +18,7 @@ function App() {
           <Route path="/project" Component={Projects} />
         </Routes>
       </Header>
-    </>
+    </Suspense>
   );
 }
 

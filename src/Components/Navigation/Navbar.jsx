@@ -43,7 +43,7 @@ function Navbar() {
 
   return (
     <div className="fixed top-0 z-[99] w-full">
-      <div className="w-full flex justify-between  navbar">
+      <div className="w-full flex justify-between  navbar uppercase">
         <div onClick={() => navigate("/")} className="px-2 py-2">
           <svg
             id="logo"
@@ -75,7 +75,7 @@ function Navbar() {
           <div className="flex font-[font2]  text-[14px] sm:text-[19px]">
             <div
               onClick={() => navigate("/project")}
-              className="links nav-div transition-all duration-150  min-w-[22vw] relative h-16 hidden md:flex justify-start items-end bg-black text-white group"
+              className="links nav-div transition-all duration-150  min-w-[21vw] relative h-16 hidden md:flex justify-start items-end bg-black text-white group"
             >
               <p className="px-3 py-1 group-hover:text-black relative z-[2] ">
                 Projets (16)
@@ -84,7 +84,7 @@ function Navbar() {
             </div>
             <div
               onClick={() => navigate("/agence")}
-              className="links nav-div transition-all duration-150  min-w-[22vw] overflow-hidden relative h-25 hidden md:flex justify-start items-end bg-black text-white group"
+              className="links nav-div transition-all duration-150  min-w-[31vw] overflow-hidden relative h-25 hidden md:flex justify-start items-end bg-black text-white group"
             >
               <p className="px-3 py-1 group-hover:text-black relative z-[2]">
                 Agence
@@ -93,7 +93,7 @@ function Navbar() {
             </div>
             <div
               onClick={() => setNavActive(true)}
-              className="menu-link nav-div transition-all duration-150  overflow-hidden  min-w-[22vw] relative h-full flex flex-col justify-between items-end bg-black text-white group"
+              className="menu-link nav-div transition-all duration-150  overflow-hidden  min-w-[18vw] relative h-full flex flex-col justify-between items-end bg-black text-white group"
             >
               <div className="flex relative justify-center items-end flex-col h-14 w-[32vw] md:w-[18vw] group bg-black px-4 gap-1">
                 <div className="bg-white w-[25%] h-[2px] group-hover:bg-black relative z-[2]"></div>

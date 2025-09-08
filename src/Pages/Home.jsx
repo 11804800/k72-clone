@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Video from "../Components/home/Video";
 import HomeBottom from "../Components/home/HomeBottom";
 import HomeHero from "../Components/home/HomeHero";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import Navbar from "../Components/Navigation/Navbar";
-
 
 function Home() {
+  useEffect(() => {
+    function SetTitle() {
+      document.title = "Accueil — Agence k72";
+    }
+    SetTitle();
+  }, []);
   useGSAP(() => {
     gsap.from(".home-container", {
       opacity: 0,

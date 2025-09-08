@@ -131,15 +131,13 @@ const ImageData = [
 ];
 
 function Projects() {
-  const [windowWidth, setwindowWidth] = useState(window.innerWidth);
-
   useEffect(() => {
-    const handleResize = () => setwindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
+    function SetTitle() {
+      document.title = "Projets — Agence k72";
+    }
+    SetTitle();
+  }, []);
+
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -155,11 +153,10 @@ function Projects() {
     }
   });
 
-
   return (
     <>
       <Navbar />
-      <div className="p-4">        
+      <div className="p-4">
         <div className="app-div mt-[400px] sm:mt-[350px] md:mt-[320px]  lg:mt-[280px] xl:mt-[230px]  pt-[10vw]">
           <h1 className="font-[font2] text-[13vw] flex items-start leading-[0.8] uppercase">
             Projets<small className="text-3xl md:text-4xl -mt-1">16</small>
