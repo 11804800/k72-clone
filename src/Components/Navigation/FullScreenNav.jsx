@@ -96,7 +96,7 @@ function FullScreenNav() {
       </div>
       <div
         ref={FullNavRef}
-        className="relative bg-black h-full navigation-container"
+        className="relative bg-black h-full navigation-container py-1"
       >
         <div className="flex w-full  justify-between items-start p-4 nav-link">
           <div
@@ -120,14 +120,14 @@ function FullScreenNav() {
           </div>
           <div
             id="close-btn"
-            className="w-25 h-25 relative overflow-hidden"
+            className="w-10 h-10 md:w-18 md:h-18 lg:w-25 lg:h-25 relative overflow-hidden"
             onClick={() => setNavActive(false)}
           >
             <div className="h-44 w-[2px] bg-white absolute -rotate-45 origin-top"></div>
             <div className="h-44 w-[2px] bg-white right-0 absolute rotate-45 origin-top"></div>
           </div>
         </div>
-        <div id="all-links" className="text-white py-0 flex flex-col  h-full">
+        <div id="all-links" className="text-white py-0 flex flex-col  h-full justify-center sm:justify-normal -mt-[20vw] sm:mt-[20vw] md:mt-[10vw] lg:mt-0">
           <div className="group link origin-top border-b border-t uppercase relative">
             <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center">
               Projects

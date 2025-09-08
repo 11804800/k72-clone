@@ -88,26 +88,26 @@ function AgenceCarousel() {
           </div>
           <img
             src="./CAMILLE.jpg"
-            className="rounded-[40px] h-screen carousel-image"
+            className="rounded-[40px] sm:h-screen w-[65vw] md:w-fit object-cover h-[400px] carousel-image"
           />
           <div className="absolute w-full top-1/2 carousel-scroll flex">
             <div className="flex items-end gap-24 shrink-0 w-[100vw] moveLeft">
               <h2 className="text-[#d3fd50] text-[8vw] leading-[0.8]">
                 briere
               </h2>
-              <p className="text-white text-[2vw]">Conceptrice-redactrice</p>
+              <p className="text-white text-[14px] md:text-[2vw]">Conceptrice-redactrice</p>
             </div>
             <div className="flex items-end gap-24 shrink-0 w-[100vw] moveLeft">
               <h2 className="text-[#d3fd50] text-[8vw] leading-[0.8]">
                 briere
               </h2>
-              <p className="text-white text-[2vw]">Conceptrice-redactrice</p>
+              <p className="text-white text-[14px] md:text-[2vw]">Conceptrice-redactrice</p>
             </div>
             <div className="flex items-end gap-24 shrink-0 w-[100vw] moveLeft">
               <h2 className="text-[#d3fd50] text-[8vw] leading-[0.8]">
                 briere
               </h2>
-              <p className="text-white text-[2vw]">Conceptrice-redactrice</p>
+              <p className="text-white text-[14px] md:text-[2vw]">Conceptrice-redactrice</p>
             </div>
           </div>
         </div>
@@ -133,26 +133,26 @@ function AgenceCarousel() {
           </div>
           <img
             src="./ChantalG.jpg"
-            className="rounded-[40px] h-screen carousel-image1"
+            className="rounded-[40px] sm:h-screen w-[65vw] md:w-fit object-cover h-[400px] carousel-image1"
           />
           <div className="absolute w-full top-1/2 carousel-scroll1 flex">
             <div className="flex items-end gap-24 shrink-0 w-[100vw] moveLeft">
               <h2 className="text-[#d3fd50] text-[8vw] leading-[0.8]">
                 gobeil
               </h2>
-              <p className="text-white text-[2vw]">Directrice de creation</p>
+              <p className="text-white text-[14px] md:text-[2vw]">Directrice de creation</p>
             </div>
             <div className="flex items-end gap-24 shrink-0 w-[100vw] moveLeft">
               <h2 className="text-[#d3fd50] text-[8vw] leading-[0.8]">
                 gobeil
               </h2>
-              <p className="text-white text-[2vw]">Directrice de creation</p>
+              <p className="text-white text-[14px] md:text-[2vw]">Directrice de creation</p>
             </div>
             <div className="flex items-end gap-24 shrink-0 w-[100vw] moveLeft">
               <h2 className="text-[#d3fd50] text-[8vw] leading-[0.8]">
                 gobeil
               </h2>
-              <p className="text-white text-[2vw]">Directrice de creation</p>
+              <p className="text-white text-[14px] md:text-[2vw]">Directrice de creation</p>
             </div>
           </div>
         </div>

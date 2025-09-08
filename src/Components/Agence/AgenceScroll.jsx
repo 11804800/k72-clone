@@ -36,11 +36,11 @@ function AgenceScroll() {
 
   return (
     <div className="py-1  w-full mb-[50vw]">
-      <div className="mt-[10vw] w-full agence-scroller flex flex-col gap-1">
-        <div className="group Agence-scroll1 h-screen overflow-hidden rounded-[40px] relative ">
+      <div className="mt-[40vw] lg:mt-[15vw] w-full agence-scroller flex flex-col gap-1">
+        <div className="group Agence-scroll1  md:h-screen overflow-hidden rounded-[40px] relative ">
           <img
             src="../image10.jpg"
-            className="w-full rounded-[40px] transition-all duration-400 group-hover:scale-105"
+            className="agence-scroll-image  object-cover w-full rounded-[40px] transition-all duration-400 group-hover:scale-105"
           />
           <div className="absolute text-white font-[font2] top-0 h-full group-hover:bg-black/15 z-[999] w-full flex flex-col justify-center items-center">
             <p className="text-[3vw]">Lamejure</p>
@@ -49,10 +49,10 @@ function AgenceScroll() {
             </h1>
           </div>
         </div>
-        <div className="group Agence-scroll2 h-screen overflow-hidden rounded-[40px] relative">
+        <div className="group Agence-scroll2 md:h-screen overflow-hidden rounded-[40px] relative">
           <img
             src="../image13.jpg"
-            className="w-full rounded-[40px] transition-all duration-400 group-hover:scale-105"
+            className="agence-scroll-image  object-cover w-full rounded-[40px] transition-all duration-400 group-hover:scale-105"
           />
           <div className="absolute text-white font-[font2] top-0 h-full group-hover:bg-black/15 z-[999] w-full flex flex-col justify-center items-center">
             <p className="text-[3vw]">GardaWorld</p>
@@ -61,10 +61,10 @@ function AgenceScroll() {
             </h1>
           </div>
         </div>
-        <div className="group Agence-scroll3 h-screen overflow-hidden rounded-[40px] relative">
+        <div className="group Agence-scroll3 md:h-screen bg-amber-50 overflow-hidden rounded-[40px] relative">
           <img
             src="../image16.jpg"
-            className="w-full group-hover:scale-105 rounded-[40px] transition-all duration-400 "
+            className="agence-scroll-image object-cover w-full group-hover:scale-105 rounded-[40px] transition-all duration-400 "
           />
           <div className="absolute text-white font-[font2] top-0 h-full group-hover:bg-black/15 z-[999] w-full flex flex-col justify-center items-center">
             <p className="text-[3vw]">Lassonde</p>

@@ -72,3 +72,12 @@ html,body{
         transform: translateX(0);
     }
 }
+
+@media (max-width:450px) {
+    .image-div
+    {
+        display: none;
+        width: 0px;
+        height: 0px;
+    }
+}

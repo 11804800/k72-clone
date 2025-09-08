@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CreativeName from "../Components/Agence/CreativeName";
 import AgenceCarousel from "../Components/Agence/AgenceCarousel";
 import AgenceScroll from "../Components/Agence/AgenceScroll";
@@ -25,17 +25,19 @@ const ImageArray = [
   "../MEGGIE.jpg",
   "../joel.jpg",
 ];
+
 function Agence() {
+
+
   const [Index, setIndex] = useState(0);
   useGSAP(() => {
-
-
     gsap.to(".agence-image-div", {
       scrollTrigger: {
         pin: true,
         trigger: ".agence-image-div",
         start: "top 30%",
-        end: "top -130%",
+        end: `400% 30%`,
+        pinSpacing: false,
         onUpdate: (elem) => {
           let index;
           if (elem.progress < 1) {
@@ -52,16 +54,16 @@ function Agence() {
   return (
     <div className="agence-container transition-all duration-75">
       <div className="py-1 ">
-        <div className="flex app-div flex-col mt-[12vw] relative">
-          <div className="agence-image-div overflow-hidden w-[230px] left-[28%] -z-10 h-[300px] bg-red-500 rounded-4xl">
-            <img src={ImageArray[Index]} className="w-fullh-full " />
+        <div className="flex app-div flex-col mt-[200px] xl:mt-[12vw] relative agence-hero-container">
+          <div className="flex agence-image-div overflow-hidden w-[100px] sm:w-[150px] lg:w-[14vw] left-[28%] -z-10 sm:h-[200px] lg:h-[18vw] bg-red-500 rounded-2xl sm:rounded-4xl">
+            <img src={ImageArray[Index]} className="w-full h-full " />
           </div>
-          <h1 className="text-center text-[20vw] leading-[0.8] uppercase font-[font2]">
+          <h1 className="text-center text-[20vw] leading-[0.8] uppercase font-[font2] md:py-0 pb-25 px-0">
             Soixan7e <br />
             DOUZE
           </h1>
           <div className="self-end md:w-[62%] p-4">
-            <p className="font-[font2] text-[3.3vw] leading-[1.1] ml-1">
+            <p className="font-[font2] text-[21px] md:text-[36px] lg:text-[3.3vw] leading-[1.1] ml-1">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notre
               curiosité nourrit notre créativité. On reste humbles et on dit non
               aux gros egos, même le vôtre. Une marque est vivante. Elle a des
@@ -72,7 +74,7 @@ function Agence() {
             </p>
           </div>
         </div>
-        <div className="text-[1.3vw] h-screen font-[font2] flex flex-col gap-40 justify-start py-34 items-center">
+        <div className="text-[18px] xl:text-[1.3vw] h-full md:h-screen font-[font2] flex flex-col gap-40 justify-start py-34 items-center">
           <div className="flex w-[80%] justify-between">
             <div>
               <h1>Expertise</h1>
@@ -85,8 +87,8 @@ function Agence() {
               <p className="leading-[1.3]">Contenu</p>
             </div>
           </div>
-          <div className="flex justify-center items-center w-[80%]">
-            <div className="p-2 ">
+          <div className="flex flex-col md:flex-row justify-center items-center w-full md:w-[80%] md:mt-0 mt-25 gap-10 md:gap-0">
+            <div className="p-2">
               <p className="p-5">
                 Nos projets_ naissent dans l’humilité, grandissent dans la
                 curiosité et vivent grâce à la créativité sous toutes ses

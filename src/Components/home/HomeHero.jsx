@@ -3,7 +3,7 @@ import Video from "./Video";
 
 function HomeHero() {
   return (
-    <div className="relative flex font-[font2] justify-center text-center g:mt-0 pt-5 w-full">
+    <div className="relative flex font-[font2] justify-center text-center mt-[20vw] md:mt-[10vw] lg:mt-0 pt-5 w-full">
       <div className="lg:text-[9.5vw] text-[12vw] uppercase lg:leading-[8vw] leading-[10vw]">
         L'étincelle
         <div className="lg:text-[9.5vw] text-[12vw] flex items-center">

@@ -13,12 +13,12 @@ function HomeBottom() {
         doit être fait.
       </p>
       <div className="w-full flex justify-center font-[font2]">
-        <div className="flex gap-2 uppercase relative bottom-0 pb-2">
-          <div className="lg:border-3 border-2  hover:text-yellow-300 hover:border-yellow-300  h-10 sm:h-12 lg:h-24 text-[6vw] px-8 rounded-full uppercase flex items-center">
+        <div className="flex gap-0 md:gap-2 uppercase relative bottom-0 pb-2">
+          <div className="lg:border-3 border-2  hover:text-yellow-300 hover:border-yellow-300  h-10 sm:h-12 lg:h-24 text-[6vw] px-3 md:px-8 rounded-full uppercase flex items-center">
             <Link to="/project" className="mt-1 sm:mt-2 lg:mt-6">Projects</Link>
           </div>
           <span className="px-1"></span>
-          <div className="lg:border-3 border-2  hover:text-yellow-300 hover:border-yellow-300  h-10 sm:h-12 lg:h-24 text-[6vw] px-8 rounded-full uppercase flex items-center">
+          <div className="lg:border-3 border-2  hover:text-yellow-300 hover:border-yellow-300  h-10 sm:h-12 lg:h-24 text-[6vw] px-3 md:px-8 rounded-full uppercase flex items-center">
             <Link to="/agence" className="mt-1 sm:mt-2 lg:mt-6">Agence</Link>
           </div>
         </div>
