@@ -7,7 +7,6 @@ import gsap from "gsap";
 
 function Home() {
   useEffect(() => {
-    console.log("Agence Loaded");
     function SetTitle() {
       document.title = "Accueil — Agence k72";
     }

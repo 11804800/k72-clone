@@ -65,7 +65,7 @@ function CreativeName() {
       >
         <div
           ref={ImageDivRef}
-          className="w-[18vw] h-[25vw] image-div overflow-hidden drop-shadow-2xl origin-left rounded-2xl md:rounded-4xl absolute left-1/3  text-3xl bg-image bg-cover bg-center bg-[url('blank.jpg')] z-[9999]"
+          className="w-[18vw] h-[25vw] image-div overflow-hidden drop-shadow-2xl origin-left rounded-2xl md:rounded-4xl absolute left-1/3  text-3xl bg-image bg-cover bg-center bg-[url('/assets/blank.jpg')] z-[9999]"
         >
           <img
             ref={ImageRef}

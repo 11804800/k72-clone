@@ -37,7 +37,6 @@ function Agence() {
       document.title="Agence — Agence k72"
     }
     SetTitle();
-    console.log("Agence Loaded");
   },[]);
 
   const [Index, setIndex] = useState(0);

@@ -132,7 +132,7 @@ const ImageData = [
 
 function Projects() {
   useEffect(() => {
-    console.log("Agence Loaded");
+  
     function SetTitle() {
       document.title = "Projets — Agence k72";
     }

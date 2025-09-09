@@ -86,10 +86,10 @@ function AgenceCarousel() {
               </div>
             </div>
           </div>
-          <div className="Carousel-image-1 overflow-hidden rounded-[40px] sm:h-screen w-[55vw] md:w-[500px] object-cover h-[400px] bg-image bg-[url('blank.jpg')]">
+          <div className="Carousel-image-1 overflow-hidden rounded-[40px] sm:h-screen w-[55vw] md:w-[500px] object-cover h-[400px] bg-image bg-[url('/assets/blank.jpg')]">
             <img
               src="./CAMILLE.jpg"
-              className="w-[55vw] md:w-[500px] h-full object-contain"
+              className="w-[55vw] rounded-[40px] md:w-[500px] h-full object-contain"
             />
           </div>
           <div className="absolute w-full top-1/2 carousel-scroll flex">
@@ -139,10 +139,10 @@ function AgenceCarousel() {
               </div>
             </div>
           </div>
-          <div className="Carousel-image-2 rounded-[40px] sm:h-screen w-[55vw] md:w-[500px] object-cover h-[400px] bg-image bg-[url('blank.jpg')]">
+          <div className="Carousel-image-2 rounded-[40px] sm:h-screen w-[55vw] md:w-[500px] object-cover h-[400px] bg-image bg-[url('/assets/blank.jpg')]">
             <img
               src="./ChantalG.jpg"
-              className="w-[55vw] md:w-[500px] h-full object-contain"
+              className="w-[55vw] md:w-[500px] rounded-[40px] h-full object-contain"
             />
           </div>
           <div className="absolute w-full top-1/2 carousel-scroll1 flex">
