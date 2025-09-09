@@ -18,7 +18,7 @@ function FullScreenNav() {
 
     tl.to(".stairing", {
       height: "100%",
-      delay:0.2,
+      delay: 0.2,
       stagger: {
         amount: -0.3,
       },
@@ -73,7 +73,7 @@ function FullScreenNav() {
   }
 
   useGSAP(() => {
-    if (NavActive ) {
+    if (NavActive) {
       gsapAnimation();
     } else {
       gsapAnimationReverse();
@@ -127,8 +127,17 @@ function FullScreenNav() {
             <div className="h-44 w-[2px] bg-white right-0 absolute rotate-45 origin-top"></div>
           </div>
         </div>
-        <div id="all-links" className="text-white py-0 flex flex-col  h-full justify-center sm:justify-normal -mt-[20vw] sm:mt-[20vw] md:mt-[10vw] lg:mt-0">
-          <div className="group link origin-top border-b border-t uppercase relative">
+        <div
+          id="all-links"
+          className="text-white py-0 flex flex-col  h-full justify-center sm:justify-normal -mt-[20vw] sm:mt-[20vw] md:mt-[10vw] lg:mt-0"
+        >
+          <div
+            onClick={() => {
+              navigate("/project");
+              setNavActive(false);
+            }}
+            className="group link origin-top border-b border-t uppercase relative"
+          >
             <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center cursor-pointer">
               Projects
             </h1>
@@ -173,7 +182,13 @@ function FullScreenNav() {
               </div>
             </div>
           </div>
-          <div className="  group link origin-top border-b uppercase relative">
+          <div
+            onClick={() => {
+              navigate("/agence");
+              setNavActive(false);
+            }}
+            className="  group link origin-top border-b uppercase relative"
+          >
             <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center cursor-pointer">
               Agence
             </h1>
