@@ -132,6 +132,7 @@ const ImageData = [
 
 function Projects() {
   useEffect(() => {
+    console.log("Agence Loaded");
     function SetTitle() {
       document.title = "Projets — Agence k72";
     }
@@ -155,7 +156,6 @@ function Projects() {
 
   return (
     <>
-      <Navbar />
       <div className="p-4">
         <div className="app-div mt-[400px] sm:mt-[350px] md:mt-[320px]  lg:mt-[280px] xl:mt-[230px]  pt-[10vw]">
           <h1 className="font-[font2] text-[13vw] flex items-start leading-[0.8] uppercase">

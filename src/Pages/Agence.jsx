@@ -30,13 +30,16 @@ const ImageArray = [
 function Agence() {
 
 
+
   useEffect(()=>{
     function SetTitle()
     {
       document.title="Agence — Agence k72"
     }
     SetTitle();
+    console.log("Agence Loaded");
   },[]);
+
   const [Index, setIndex] = useState(0);
   useGSAP(() => {
     gsap.to(".agence-image-div", {
@@ -61,11 +64,11 @@ function Agence() {
 
   return (
 
-      <div className="agence-container transition-all duration-75">
+      <div className="agence-container transition-all duration-75 overflow-x-hidden">
         <div className="py-1 ">
-          <div className="flex app-div flex-col mt-[200px] xl:mt-[12vw] relative agence-hero-container">
+          <div className="flex app-div flex-col mt-[400px] sm:mt-[200px] xl:mt-[12vw] relative agence-hero-container">
             <div className="flex agence-image-div overflow-hidden w-[100px] sm:w-[150px] lg:w-[14vw] left-[28%] -z-10 sm:h-[200px] lg:h-[18vw] bg-red-500 rounded-2xl sm:rounded-4xl">
-              <img src={ImageArray[Index]} className="w-full h-full " />
+              <img src={ImageArray[Index]} loading="lazy" className="w-full h-full " />
             </div>
             <h1 className="text-center text-[20vw] leading-[0.8] uppercase font-[font2] md:py-0 pb-25 px-0">
               Soixan7e <br />

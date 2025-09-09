@@ -4,6 +4,8 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import Context from "./Components/Context/Context.jsx";
+import FullScreenNav from "./Components/Navigation/FullScreenNav.jsx";
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -13,8 +15,9 @@ createRoot(document.getElementById("root")).render(
           v7_relativeSplatPath: true,
           v7_startTransition: true,
         }}
-      > 
-          <App />
+      >
+        <FullScreenNav />
+        <App />
       </BrowserRouter>
     </Context>
   </StrictMode>

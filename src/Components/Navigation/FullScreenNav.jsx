@@ -47,7 +47,7 @@ function FullScreenNav() {
       rotateX: 90,
       opacity: 0,
       stagger: {
-        amount: 0.3,
+        amount: 0.1,
       },
     });
 
@@ -73,7 +73,7 @@ function FullScreenNav() {
   }
 
   useGSAP(() => {
-    if (NavActive) {
+    if (NavActive ) {
       gsapAnimation();
     } else {
       gsapAnimationReverse();
@@ -83,7 +83,7 @@ function FullScreenNav() {
   return (
     <div
       id="fullscreennav"
-      className="h-screen transition-all duration-200 fixed w-full no-scrollbar z-[9999]"
+      className="h-screen transition-all duration-200 fixed w-full no-scrollbar z-[9]"
     >
       <div className="h-screen fixed w-full">
         <div className="flex w-full h-full">
@@ -129,7 +129,7 @@ function FullScreenNav() {
         </div>
         <div id="all-links" className="text-white py-0 flex flex-col  h-full justify-center sm:justify-normal -mt-[20vw] sm:mt-[20vw] md:mt-[10vw] lg:mt-0">
           <div className="group link origin-top border-b border-t uppercase relative">
-            <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center">
+            <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center cursor-pointer">
               Projects
             </h1>
             <div
@@ -174,7 +174,7 @@ function FullScreenNav() {
             </div>
           </div>
           <div className="  group link origin-top border-b uppercase relative">
-            <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center">
+            <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center cursor-pointer">
               Agence
             </h1>
             <div
@@ -219,7 +219,7 @@ function FullScreenNav() {
             </div>
           </div>
           <div className="group link origin-top border-b uppercase relative">
-            <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center">
+            <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center cursor-pointer">
               Contact
             </h1>
             <div className="cursor-pointer group-hover:h-full h-0 transition-all duration-150 origin-center overflow-hidden absolute flex bg-[#d3fd50] top-0 w-full text-black font-[font2]">
@@ -258,7 +258,7 @@ function FullScreenNav() {
             </div>
           </div>
           <div className="group link origin-top border-b uppercase relative">
-            <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center ">
+            <h1 className="font-[font2] leading-[0.8] pt-3 text-[8vw] text-center cursor-pointer">
               Blogue
             </h1>
             <div className="cursor-pointer group-hover:h-full h-0 transition-all duration-150 origin-center overflow-hidden absolute flex bg-[#d3fd50] top-0 w-full text-black font-[font2]">

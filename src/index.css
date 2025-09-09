@@ -22,6 +22,7 @@ html,body{
 
 
 
+
 .moveX
 {
     animation-name: moveAnimation;
@@ -82,4 +83,8 @@ html,body{
         width: 0px;
         height: 0px;
     }
+}
+
+#fullscreennav {
+  display: none;
 }

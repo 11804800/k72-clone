@@ -23,6 +23,7 @@ function Navbar() {
           start: "top 10%",
           end: "top 10%",
           scrub: true,
+          invalidateOnRefresh:true
         },
       });
 
@@ -40,6 +41,7 @@ function Navbar() {
       });
     }
   });
+
 
   return (
     <div className="fixed top-0 z-[99] w-full">

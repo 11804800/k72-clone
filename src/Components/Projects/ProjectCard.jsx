@@ -37,13 +37,14 @@ function ProjectCard({ item }) {
         onMouseLeave={() => {
           MouseLeave();
         }}
-        className="relative h-full w-full lg:w-1/2"
+        className={`${titleActive && "rounded-[40px]"} relative h-full w-full lg:w-1/2 bg-black/35`}
       >
         <img
           src={item.item1.image}
           className={`w-[100%] h-full ${
             titleActive && "rounded-[40px]"
           } object-cover duration-400 transition-all`}
+          loading="lazy"
         />
         <div
           className={`${
@@ -62,13 +63,14 @@ function ProjectCard({ item }) {
         onMouseLeave={() => {
           MouseLeave1();
         }}
-        className="relative h-full  w-full lg:w-1/2"
+        className={`${titleActive1 && "rounded-[40px]"} relative h-full w-full lg:w-1/2 bg-black/35`}
       >
         <img
           src={item.item2.image}
           className={`w-[100%] h-full ${
             titleActive1 && "rounded-[40px]"
           } object-cover duration-400 transition-all`}
+          loading="lazy"
         />
         <div
           className={`${
