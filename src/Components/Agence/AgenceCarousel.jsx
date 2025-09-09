@@ -5,6 +5,7 @@ function AgenceCarousel() {
   useGSAP(() => {
     gsap.to("body", {
       backgroundColor: "black",
+      color:"white",
       scrollTrigger: {
         trigger: ".Carousel-Container",
         start: "top 80%",
