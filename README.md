@@ -1,12 +1,54 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# K72
 
-Currently, two official plugins are available:
+This project is a clone of an existing website k72.ca, designed to showcase my web development skills. I replicated the layout, features, and content to demonstrate my ability to analyze and recreate complex web interfaces efficiently
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Acknowledgements
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ - https://k72.ca/
+
+## Live Link
+
+```bash
+ https://k72-clone-nine.vercel.app/
+ 
+```
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/11804800/k72-clone.git
+```
+
+Go to the project directory
+
+```bash
+  cd k72-clone
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+
+
+
+## Tech Stack
+
+**Client:** React, Tailwindcss, Gsap, ScrollTrigger
+
+
+
+
